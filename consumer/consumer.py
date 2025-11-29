@@ -30,4 +30,7 @@ for msg in consumer:
     with open(local_file, "w") as f:
         f.write(json.dumps(data))
 
-    subprocess.run(["hdfs", "dfs", "-put", local_file, HDFS_DIR], check=False)
+    try:
+        subprocess.run(["hdfs", "dfs", "-put", local_file, HDFS_DIR], check=False)
+    except FileNotFoundError:
+        print("[INFO] HDFS not available in this environment. File saved locally only.")
