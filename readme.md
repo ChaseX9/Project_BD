@@ -78,6 +78,8 @@ Kafka was selected because:
 
 ### 4.1 Create `.env`
 
+All the necessary configuration to create and reproduce the environment is clearly defined in the .env file, which provides all required variables such as the Kafka broker address, topic name, user ID, and HDFS directory.
+
 ```
 USER_ID=mael
 TOPIC=iot_mael
